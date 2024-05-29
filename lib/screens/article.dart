@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
+import '../widgets/outbrainWidgetPlaceholder.dart';
 
 class Article extends StatefulWidget {
   const Article({Key? key}) : super(key: key);
@@ -74,38 +73,6 @@ class _ArticleState extends State<Article> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class OutbrainWidget extends StatelessWidget {
-  final List<String> recommendations = [
-    "placeholder",
-    "recommendations",
-    "for",
-    "articles",
-  ];
-  final Random rand = Random();
-
-  Color getRandomColor() {
-    return Color.fromARGB(
-      rand.nextInt(256),
-      rand.nextInt(256),
-      rand.nextInt(256),
-      rand.nextInt(256),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: recommendations.map((str) => Text(
-          str,
-          style: TextStyle(backgroundColor: getRandomColor(), fontSize: 16),
-        )).toList()
-      )
     );
   }
 }
